@@ -108,7 +108,6 @@ export default {
   padding-right: 55px;
 }
 .duration {
-  color: $text-light;
   flex: 1;
   font-family: $font-family-duration;
   padding-left: 25px;

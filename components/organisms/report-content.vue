@@ -24,13 +24,16 @@
           @toggle-detail="toggleDetail(project.id)"
         />
       </section>
-      <section class="doughnut-chart-wrapper">
-        <p v-if="empty" class="doughnut-chart-empty" />
-        <doughnut-chart
-          v-if="!empty"
-          :chart-data="doughnutChartData"
-          class="doughnut-chart"
-        />
+      <section class="total">
+        <span class="total-sum">{{ fromS(totalSum, 'hh:mm:ss') }}</span>
+        <section class="doughnut-chart-wrapper">
+          <p v-if="empty" class="doughnut-chart-empty" />
+          <doughnut-chart
+            v-if="!empty"
+            :chart-data="doughnutChartData"
+            class="doughnut-chart"
+          />
+        </section>
       </section>
     </div>
   </article>
@@ -43,6 +46,7 @@ import BarChart from '~/components/atoms/bar-chart';
 import ReportContentItem from '~/components/organisms/report-content-item';
 import without from 'lodash.without';
 import { mapGetters } from 'vuex';
+import { fromS } from 'hh-mm-ss';
 
 export default {
   components: {
@@ -64,6 +68,10 @@ export default {
       type: Object,
       required: true,
     },
+    totalSum: {
+      type: Number,
+      required: true,
+    },
     previousTotals: {
       type: Object,
       required: true,
@@ -80,6 +88,11 @@ export default {
       type: Array,
       required: true,
     },
+  },
+  data() {
+    return {
+      fromS,
+    };
   },
   computed: {
     ...mapGetters({
@@ -131,8 +144,10 @@ export default {
 .doughnut-chart-wrapper {
   align-self: start;
   background-color: $background-translucent;
-  padding: 10px;
+  margin-bottom: 5px;
+  padding: 20px;
   position: sticky;
+  text-align: center;
   top: 40px;
 }
 .doughnut-chart,
@@ -165,7 +180,7 @@ export default {
   flex: 1;
   flex-direction: column;
   margin: 0;
-  margin-right: 40px;
+  margin-right: 30px;
   max-width: 650px;
   min-width: 1px;
   padding: 0;
@@ -176,8 +191,37 @@ export default {
     border-top: 0;
   }
 }
+.total {
+  background-color: $background-translucent;
+  border: 1px $border solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px $shadow;
+  display: flex;
+  flex-direction: column;
+}
+.total-sum {
+  border-bottom: 1px $border solid;
+  color: $text;
+  display: block;
+  font-family: $font-family-duration;
+  font-size: 28px;
+  font-weight: 200;
+  padding: 25px 0;
+  text-align: center;
+}
 
 @include mq(small) {
+  .total {
+    border: 0;
+    box-shadow: none;
+    margin: 25px 0;
+    width: 100%;
+  }
+  .total-sum {
+    border: 0;
+    order: 1;
+    padding: 0;
+  }
   .report-content {
     flex-direction: column;
     margin: 0;
@@ -192,7 +236,8 @@ export default {
     justify-content: center;
     margin: 0;
     order: 0;
-    padding: 30px 0;
+    padding: 0;
+    padding-bottom: 15px;
   }
   .doughnut-chart {
     align-self: center;
