@@ -25,7 +25,7 @@
         />
       </section>
       <section class="total">
-        <span class="total-sum">{{ fromS(totalSum, 'hh:mm:ss') }}</span>
+        <animate-duration class="total-sum" :duration="totalSum" />
         <section class="doughnut-chart-wrapper">
           <p v-if="empty" class="doughnut-chart-empty" />
           <doughnut-chart
@@ -44,6 +44,7 @@ import ColorScheme from '~/components/atoms/color-scheme';
 import DoughnutChart from '~/components/atoms/doughnut-chart';
 import BarChart from '~/components/atoms/bar-chart';
 import ReportContentItem from '~/components/organisms/report-content-item';
+import AnimateDuration from '../atoms/animate-duration';
 import without from 'lodash.without';
 import { mapGetters } from 'vuex';
 import { fromS } from 'hh-mm-ss';
@@ -54,6 +55,7 @@ export default {
     DoughnutChart,
     BarChart,
     ReportContentItem,
+    AnimateDuration,
   },
   props: {
     barChartData: {
@@ -208,6 +210,9 @@ export default {
   font-weight: 200;
   padding: 25px 0;
   text-align: center;
+  &.zero {
+    color: $text-light;
+  }
 }
 
 @include mq(small) {
