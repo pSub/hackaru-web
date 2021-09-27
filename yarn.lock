@@ -1886,15 +1886,6 @@
     "@sentry/utils" "6.11.0"
     tslib "^1.9.3"
 
-"@sentry/hub@6.12.0":
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-6.12.0.tgz#29e323ab6a95e178fb14fffb684aa0e09707197f"
-  integrity sha512-yR/UQVU+ukr42bSYpeqvb989SowIXlKBanU0cqLFDmv5LPCnaQB8PGeXwJAwWhQgx44PARhmB82S6Xor8gYNxg==
-  dependencies:
-    "@sentry/types" "6.12.0"
-    "@sentry/utils" "6.12.0"
-    tslib "^1.9.3"
-
 "@sentry/hub@6.13.2":
   version "6.13.2"
   resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-6.13.2.tgz#ebc66fd55c96c7686a53ffd3521b6a63f883bb79"
@@ -1921,15 +1912,6 @@
   dependencies:
     "@sentry/hub" "6.11.0"
     "@sentry/types" "6.11.0"
-    tslib "^1.9.3"
-
-"@sentry/minimal@6.12.0":
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-6.12.0.tgz#cbe20e95056cedb9709d7d5b2119ef95206a9f8c"
-  integrity sha512-r3C54Q1KN+xIqUvcgX9DlcoWE7ezWvFk2pSu1Ojx9De81hVqR9u5T3sdSAP2Xma+um0zr6coOtDJG4WtYlOtsw==
-  dependencies:
-    "@sentry/hub" "6.12.0"
-    "@sentry/types" "6.12.0"
     tslib "^1.9.3"
 
 "@sentry/minimal@6.13.2":
@@ -1983,11 +1965,6 @@
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.11.0.tgz#5122685478d32ddacd3a891cbcf550012df85f7c"
   integrity sha512-gm5H9eZhL6bsIy/h3T+/Fzzz2vINhHhqd92CjHle3w7uXdTdFV98i2pDpErBGNTSNzbntqOMifYEB5ENtZAvcg==
 
-"@sentry/types@6.12.0":
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.12.0.tgz#b7395688a79403c6df8d8bb8d81deb8222519853"
-  integrity sha512-urtgLzE4EDMAYQHYdkgC0Ei9QvLajodK1ntg71bGn0Pm84QUpaqpPDfHRU+i6jLeteyC7kWwa5O5W1m/jrjGXA==
-
 "@sentry/types@6.13.2":
   version "6.13.2"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.13.2.tgz#8388d5b92ea8608936e7aae842801dc90e0184e6"
@@ -1999,14 +1976,6 @@
   integrity sha512-IOvyFHcnbRQxa++jO+ZUzRvFHEJ1cZjrBIQaNVc0IYF0twUOB5PTP6joTcix38ldaLeapaPZ9LGfudbvYvxkdg==
   dependencies:
     "@sentry/types" "6.11.0"
-    tslib "^1.9.3"
-
-"@sentry/utils@6.12.0":
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.12.0.tgz#3de261e8d11bdfdc7add64a3065d43517802e975"
-  integrity sha512-oRHQ7TH5TSsJqoP9Gqq25Jvn9LKexXfAh/OoKwjMhYCGKGhqpDNUIZVgl9DWsGw5A5N5xnQyLOxDfyRV5RshdA==
-  dependencies:
-    "@sentry/types" "6.12.0"
     tslib "^1.9.3"
 
 "@sentry/utils@6.13.2":
@@ -10779,16 +10748,13 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass-loader@^10.1.0:
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-10.1.0.tgz#1727fcc0c32ab3eb197cda61d78adf4e9174a4b3"
-  integrity sha512-ZCKAlczLBbFd3aGAhowpYEy69Te3Z68cg8bnHHl6WnSCvnKpbM6pQrz957HWMa8LKVuhnD9uMplmMAHwGQtHeg==
+sass-loader@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-12.1.0.tgz#b73324622231009da6fba61ab76013256380d201"
+  integrity sha512-FVJZ9kxVRYNZTIe2xhw93n3xJNYZADr+q69/s98l9nTCrWASo+DR2Ot0s5xTKQDDEosUkatsGeHxcH4QBp5bSg==
   dependencies:
     klona "^2.0.4"
-    loader-utils "^2.0.0"
     neo-async "^2.6.2"
-    schema-utils "^3.0.0"
-    semver "^7.3.2"
 
 sass-resources-loader@^2.2.4:
   version "2.2.4"
